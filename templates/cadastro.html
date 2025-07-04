@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html><head><title>Cadastro</title><link rel="stylesheet" href="/static/css/style.css"></head>
+<body><header>Cadastro - Loja Feminina</header><nav><a href="/">Início</a><a href="/login">Login</a></nav>
+<main><h2>Crie sua conta</h2>{% if erro %}<p style="color:red">{{ erro }}</p>{% endif %}
+<form method="POST"><label>Nome:</label><input type="text" name="nome" required>
+<label>Email:</label><input type="email" name="email" required>
+<label>Senha:</label><input type="password" name="senha" required>
+<button type="submit">Cadastrar</button></form></main><footer>&copy; 2025 Loja Feminina</footer></body></html>
