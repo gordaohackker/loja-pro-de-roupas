@@ -1,7 +1,1 @@
-<!DOCTYPE html>
-<html><head><title>Login</title><link rel="stylesheet" href="/static/css/style.css"></head>
-<body><header>Login - Loja Femmora</header><nav><a href="/">Início</a><a href="/cadastro">Cadastro</a></nav>
-<main><h2>Login</h2>{% if erro %}<p style="color:red">{{ erro }}</p>{% endif %}
-<form method="POST"><label>Email:</label><input type="email" name="email" required>
-<label>Senha:</label><input type="password" name="senha" required>
-<button type="submit">Entrar</button></form></main><footer>&copy; 2025 Loja Femmora</footer></body></html>
+<!DOCTYPE html><html><head><title>Login</title><link rel="stylesheet" href="/static/css/style.css"></head><body><header>Login</header><nav><a href="/">Início</a><a href="/cadastro">Cadastro</a></nav><main><form method="POST">{% if erro %}<p style="color:red">{{ erro }}</p>{% endif %}<input type="email" name="email" placeholder="Email" required><input type="password" name="senha" placeholder="Senha" required><button type="submit">Entrar</button></form></main><footer>&copy; 2025 Loja Feminina</footer></body></html>

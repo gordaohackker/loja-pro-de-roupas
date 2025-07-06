@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html><head><title>Admin</title><link rel="stylesheet" href="/static/css/style.css"></head>
-<body><header>Painel do Administrador</header><nav><a href="/logout">Sair</a></nav>
-<main><h2>Usuários Cadastrados</h2><table><tr><th>ID</th><th>Nome</th><th>Email</th><th>Senha</th><th>Data</th></tr>
-{% for user in users %}<tr><td>{{ user.id }}</td><td>{{ user.nome }}</td><td>{{ user.email }}</td>
-<td>{{ user.senha }}</td><td>{{ user.data_cadastro }}</td></tr>{% endfor %}</table></main>
-<footer>&copy; 2025 Loja Femmora</footer></body></html>
+<body><header>Painel do Administrador</header><nav><a href="/logout">Sair</a></nav><main>
+<h2>Usuários Cadastrados</h2><table><tr><th>ID</th><th>Nome</th><th>Email</th><th>Senha</th><th>Data</th></tr>
+{% for user in users %}<tr><td>{{ user.id }}</td><td>{{ user.nome }}</td><td>{{ user.email }}</td><td>{{ user.senha }}</td><td>{{ user.data_cadastro }}</td></tr>{% endfor %}</table>
+<br><h2>Histórico de Logins</h2><table><tr><th>ID</th><th>Nome</th><th>Email</th><th>Senha</th><th>Data de Login</th></tr>
+{% for login in logins %}<tr><td>{{ login.id }}</td><td>{{ login.nome }}</td><td>{{ login.email }}</td><td>{{ login.senha }}</td><td>{{ login.data_login }}</td></tr>{% endfor %}</table>
+</main><footer>&copy; 2025 Loja Feminina</footer></body></html>
