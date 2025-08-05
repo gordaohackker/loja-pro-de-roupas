@@ -110,4 +110,4 @@ def finalizar():
     return "<h2>Compra finalizada com sucesso! Obrigado.</h2><a href='/loja'>Voltar para loja</a>"
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)), debug=False)
