@@ -1,1 +1,67 @@
-<!DOCTYPE html><html><head><title>Loja</title><link rel="stylesheet" href="/static/css/style.css"></head><body><header>Bem-vinda</header><nav><a href="/logout">Sair</a></nav><main><h2>Olá, {{ nome }}!</h2><br><h4>caso veio pelo o sorteio vai ser dia 05/08 boa sorte!</h4><br><h5>produtos em breve!!!</h5><br></main><footer>&copy; 2025 Loja Femmora</footer></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Loja Femmora</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>Bem-vinda à Loja Femmora</h1>
+    <nav>
+      <a href="/logout">Sair</a>
+      <a href="/modelos">Seja Modelo</a>
+      <a href="/carrinho" class="botao-carrinho">🛒 Ver/Editar Carrinho</a>
+      <span class="carrinho">Itens no carrinho: <span id="carrinho-contador">0</span></span>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    <h2>Olá, {{ nome }}!</h2>
+
+    <p><strong>🎉 Sorteio:</strong> será no dia <b>05/08</b>. Boa sorte!</p>
+    <p><em>🛍️ Confira nossos produtos abaixo:</em></p>
+
+    <div class="produtos">
+      <div class="produto">
+        <img src="/static/img/vestido1.jpg" alt="Vestido Floral">
+        <h3>Vestido Floral</h3>
+        <p>R$ 89,90</p>
+        <form method="post" action="/adicionar_carrinho">
+  <input type="hidden" name="produto" value="Vestido Floral">
+  <input type="hidden" name="preco" value="89.90">
+  <button type="submit">Adicionar ao Carrinho</button>
+</form>
+
+      <div class="produto">
+        <img src="/static/img/conjunto1.jpg" alt="Conjunto Verão">
+        <h3>Conjunto Verão</h3>
+        <p>R$ 119,90</p>
+        <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="/static/img/blusa1.jpg" alt="Blusa Cropped">
+        <h3>Blusa Cropped</h3>
+        <p>R$ 49,90</p>
+        <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    &copy; 2025 Loja Femmora
+  </footer>
+
+  <script>
+    let contador = 0;
+    function adicionarAoCarrinho() {
+      contador++;
+      document.getElementById("carrinho-contador").innerText = contador;
+    }
+  </script>
+
+</body>
+</html>
