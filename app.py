@@ -60,15 +60,15 @@ def loja():
     if 'user' not in session:
         return redirect('/login')
     return render_template('loja.html', nome=session['user']['nome'], produtos=produtos_disponiveis)
-    
-    @app.route('/modelos', methods=['GET', 'POST'])
+
+# ROTA MODELOS - fora da função loja
+@app.route('/modelos', methods=['GET', 'POST'])
 def modelos():
     if request.method == 'POST':
         nome = request.form['nome']
         idade = request.form['idade']
         email = request.form['email']
         instagram = request.form['instagram']
-        # Aqui pode-se adicionar a lógica para salvar os dados ou enviar por e-mail
         return render_template('modelo_sucesso.html', nome=nome)
     return render_template('modelos.html')
 
@@ -81,6 +81,7 @@ def admin():
     users = conn.execute('SELECT * FROM users').fetchall()
     conn.close()
     return render_template('admin.html', users=users)
+
 
 @app.route('/logout')
 def logout():
