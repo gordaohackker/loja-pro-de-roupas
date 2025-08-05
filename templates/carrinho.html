@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Seu Carrinho</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>🛍️ Carrinho de Compras</h1>
+    <nav>
+      <a href="/">Voltar para a Loja</a>
+    </nav>
+  </header>
+
+  <main>
+    {% if carrinho %}
+      <ul>
+        {% for produto in carrinho %}
+          <li>
+            {{ produto.nome }} - R$ {{ produto.preco }}
+            <a href="/remover/{{ loop.index0 }}">[Remover]</a>
+          </li>
+        {% endfor %}
+      </ul>
+      <p><strong>Total:</strong> R$ {{ total }}</p>
+      <a href="/finalizar"><button>Finalizar Compra</button></a>
+    {% else %}
+      <p>Seu carrinho está vazio!</p>
+    {% endif %}
+  </main>
+
+  <footer>
+    &copy; 2025 Loja Femmora
+  </footer>
+</body>
+</html>
