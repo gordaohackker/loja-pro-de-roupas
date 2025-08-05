@@ -8,6 +8,7 @@ def get_db_connection():
     conn = sqlite3.connect('database.db')
     conn.row_factory = sqlite3.Row
     return conn
+    
 
 # Produtos disponíveis na loja
 produtos_disponiveis = [
@@ -59,6 +60,18 @@ def loja():
     if 'user' not in session:
         return redirect('/login')
     return render_template('loja.html', nome=session['user']['nome'], produtos=produtos_disponiveis)
+    
+    @app.route('/modelos', methods=['GET', 'POST'])
+def modelos():
+    if request.method == 'POST':
+        nome = request.form['nome']
+        idade = request.form['idade']
+        email = request.form['email']
+        instagram = request.form['instagram']
+        # Aqui pode-se adicionar a lógica para salvar os dados ou enviar por e-mail
+        return render_template('modelo_sucesso.html', nome=nome)
+    return render_template('modelos.html')
+
 
 @app.route('/admin')
 def admin():
