@@ -105,3 +105,8 @@ th {
     background-color: #ffe0e6;
     font-weight: 600;
 }
+img {
+  max-width: 300px; /* Limita a largura máxima */
+  height: auto;     /* Mantém a proporção */
+}
+
