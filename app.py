@@ -69,6 +69,7 @@ def modelos():
         idade = request.form['idade']
         email = request.form['email']
         instagram = request.form['instagram']
+        telefone = request.form['telefone']
         return render_template('modelo_sucesso.html', nome=nome)
     return render_template('modelos.html')
 
