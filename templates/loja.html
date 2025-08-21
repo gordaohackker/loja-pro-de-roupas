@@ -5,33 +5,34 @@
   <title>Loja Femmora</title>
   <link rel="stylesheet" href="/static/css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
 
   <header class="site-header">
     <h1>Bem-vinda à Loja Femmora</h1>
     <nav>
-      <a href="/carrinho" class="botao-carrinho">🛒 Ver/Editar Carrinho</a><br>
-      <a href="/modelos">Seja Modelo💃🏻</a><br>
-      <a href="/logut">sair</a>
+      <a href="/carrinho" class="botao-carrinho"><button>🛒 Ver/Editar Carrinho</button></a><br>
+    <a href="/modelos" class="button"><button>seja Modelo💃🏻</button></a><br>
+      <a href="/logut" class="sair"><button>sair</button></a><br>
       <span class="carrinho">Itens no carrinho: <span id="carrinho-contador">0</span></span>
     </nav>
   </header>
-
-  <main class="site-main">
+  
+    <main class="site-main">
     <h2>Olá, {{ nome }}!</h2>
 
-    <p><strong>🎉 terceira Fase final Do Sorteio:</strong> será no dia <b>28/08</b>. Boa sorte!</p>
+    <p><strong>🎉 terceira Fase Do Sorteio:</strong> será no dia <b>30/08</b>. Boa sorte!</p><br>
     <p><em>🛍️ Confira nossos produtos abaixo:</em></p>
 
     <div class="produtos">
       <div class="produto">
         <img src="/static/img/vestido1.jpg" alt="Vestido Floral">
         <h3>Vestido Floral</h3>
-        <p>R$ 89,90</p>
+        <p>R$ 89,99</p>
         <form method="post" action="/adicionar_carrinho">
   <input type="hidden" name="produto" value="Vestido Floral">
-  <input type="hidden" name="preco" value="89.90">
+  <input type="hidden" name="preco" value="89.99">
   <button type="submit">Adicionar ao Carrinho</button>
 </form>
 
